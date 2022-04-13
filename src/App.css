@@ -1,8 +1,21 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  
+}
 .App {
-  text-align: center;
+  margin: 0;
+ 
+  position: absolute;
+  top: 20%;
+  left: 60%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%) 
+ /* margin: 4rem 17rem; */
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +48,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

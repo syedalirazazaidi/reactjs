@@ -1,0 +1,57 @@
+.header {
+    text-transform: capitalize;
+    font-weight: 300;
+
+}
+
+.entertainment {
+    text-transform: capitalize;
+    font-weight: 100;
+
+}
+
+.question {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+    margin-top: 4rem;
+}
+
+.answer {
+
+    margin-top: 20px;
+    width: 60%;
+
+    margin-left: 120px;
+
+}
+
+.btn-one {
+    /* padding: 10px; */
+
+}
+
+button {
+    padding: 8px 40px;
+    margin: 10px;
+
+
+}
+
+.miniBar {
+    height: 1.2rem;
+    border: 1px solid #8a898a;
+    position: relative;
+    width: -webkit-calc(100% - 2rem);
+    width: -moz-calc(100% - 2rem);
+    width: calc(100% - 2rem);
+    margin-right: 0.5rem;
+   
+   
+}
+.miniBarProgress {
+    background-color: #8a898a;
+    height: 100%;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+  }
