@@ -8,16 +8,7 @@ function Answer({
   clickedAnswer,
 }) {
   return (
-    <div
-      className="answer-css"
-      // className={
-      //   mamorize === answer
-      //     ? "correct"
-      //     : clickedAnswer === answer
-      //     ? "incorrect"
-      //     : "answer-css"
-      // }
-    >
+    <div className="answer-css">
       <span
         className="answer-cs"
         // disabled={clickedAnswer ? true : false}

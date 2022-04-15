@@ -21,11 +21,7 @@
   background-color: 'red';
 }
 
-/* .answer-cs[disabled]{
-  pointer-events: none;
-  opacity: 0.1;
 
-} */
 .answer-css:hover {
   opacity: 0.9;
   background-color: #a2a2a2;
@@ -58,8 +54,3 @@
   color: #fff
 }
 
-.answer-cs {
-  /* margin: 30px;
-  padding: auto;
-  width: 40px; */
-}
