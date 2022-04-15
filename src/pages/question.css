@@ -1,57 +1,82 @@
 .header {
-    text-transform: capitalize;
-    font-weight: 300;
-
+  text-transform: capitalize;
+  font-weight: 300;
 }
 
 .entertainment {
-    text-transform: capitalize;
-    font-weight: 100;
-
+  text-transform: capitalize;
+  font-weight: 100;
 }
 
 .question {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 200;
-    margin-top: 4rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 200;
+  margin-top: 4rem;
 }
-
-.answer {
-
-    margin-top: 20px;
-    width: 60%;
-
-    margin-left: 120px;
-
+.background-red {
+ 
+  color: white;
+  background-color: gray;
 }
+ 
 
-.btn-one {
-    /* padding: 10px; */
+.answer-css {
+  margin-top: 20px;
+  width: 60%;
 
+  margin-left: 120px;
 }
-
 button {
-    padding: 8px 40px;
-    margin: 10px;
-
+  cursor: pointer;
+  padding: 8px 40px;
+  margin: 10px;
+  margin-left: 14rem;
+  border: none;
+}
+.corrct{
+  margin-left: "17rem";
+  
+    margin-bottom: "1rem";
+    
 
 }
+@media only screen and (max-width: 800px) {
+ 
+  .submit{
+  margin: auto;
+  width: 100%;
+  background-color: green;
+  }
+  .corct{
+    
+  }
+}
+button:hover{
+  opacity: 0.7;
+  background-color: rgb(205, 182, 182);
+}
+
+
+/* button {
+  padding: 8px 40px;
+  margin: 10px;
+} */
 
 .miniBar {
-    height: 1.2rem;
-    border: 1px solid #8a898a;
-    position: relative;
-    width: -webkit-calc(100% - 2rem);
-    width: -moz-calc(100% - 2rem);
-    width: calc(100% - 2rem);
-    margin-right: 0.5rem;
-   
-   
+  height: 1.5rem;
+  border: 1px solid #8a898a;
+  position: relative;
+  width: -webkit-calc(100% - 3rem);
+  width: -moz-calc(100% - 3px);
+  width: calc(100% - 3px);
+  margin-right: 0.5rem;
+  margin-top: 4px;
 }
+
 .miniBarProgress {
-    background-color: #8a898a;
-    height: 100%;
-    position: absolute;
-    top: 0rem;
-    left: 0rem;
-  }
+  background-color: #8a898a;
+  height: 100%;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+}

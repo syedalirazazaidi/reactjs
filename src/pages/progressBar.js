@@ -3,7 +3,12 @@ import "./question.css";
 function ProgressBar() {
   return (
     <div>
-      <div className="miniBar">
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <p>Score : 67%</p>
+        <p>Max Score : 75%</p>
+      </div>
+
+      <div className="miniBar" style={{ borderRadius: "5px" }}>
         <div
           className="miniBarProgress"
           style={{ width: "20%", zIndex: 3, backgroundColor: "#180A0A" }}

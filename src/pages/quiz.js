@@ -5,7 +5,7 @@ function Quiz() {
   const [jsondata, setjsondata] = React.useState(data);
 
   return (
-    <div>
+    <div style={{ marginTop: "15rem", marginRight: "10rem" }}>
       <Question propsData={jsondata} />
     </div>
   );

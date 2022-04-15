@@ -6,10 +6,10 @@
 }
 .App {
   margin: 0;
- 
   position: absolute;
   top: 20%;
   left: 60%;
+  width: 60%;
   margin-right: -50%;
   transform: translate(-50%, -50%) 
  /* margin: 4rem 17rem; */

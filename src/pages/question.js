@@ -2,47 +2,63 @@ import React from "react";
 import Star from "./star";
 import "./question.css";
 import ProgressBar from "./progressBar";
+import Answer from "./answer";
+import { shuffleAnswer } from "../helper/suffleanswer";
 const Question = ({ propsData }) => {
   const [ques, setQues] = React.useState(0);
-  const setQu = () => {
-    setQues(ques + 1);
+  const [currentIndex, setcurrentIndex] = React.useState(0);
+  const [score, setScore] = React.useState(0);
+  const [mamorize, mamorizeCorrectAnswer] = React.useState(0);
+  const [clickedAnswer, setclickedAnswer] = React.useState();
+  const newQuestion = () => {
+    setcurrentIndex(currentIndex + 1);
   };
-  const suffleanswer = [];
-  // console.log(propsData[0].incorrect_answers);
-  // suffleanswer.push(
-  //   propsData[0].incorrect_answers,
-  //   propsData[0].correct_answer
-  // );
-  // console.log(suffleanswer);
+  console.log(propsData, "DATA");
+  const { correct_answer, incorrect_answers } = propsData[currentIndex];
 
-  // const arr = suffleanswer.sort(() => Math.random() - 0.5);
-  // console.log(arr);
-  console.log(propsData[0].incorrect_answers[0]);
-  console.log(propsData.length, "lllllllllll");
+  const shuffleAnswers = [correct_answer, ...incorrect_answers].sort(
+    () => Math.random() - 0.5
+  );
+  // const allAnswers = shuffleAnswer(correct_answer, ...incorrect_answers);
+  const check_answer = correct_answer.replace(/[%20]/gi, " ");
+  const handleAnswer = (answer) => {
+    if (answer === check_answer) {
+      setScore(score + 1);
+      mamorizeCorrectAnswer(check_answer);
+      setclickedAnswer(answer);
+    } else {
+      mamorizeCorrectAnswer(0);
+      setclickedAnswer(answer);
+    }
+  };
   return (
     <div>
-      <h1 className="header">question 1 of 20</h1>
+      <h1 className="header">
+        question {currentIndex + 1} of {Object.keys(propsData).length}
+      </h1>
       <h3 className="entertainment">Entertainment : Board Games</h3>
       <Star />
       <div>
         <div className="question">
-          {propsData[ques].question.replace(/[%20]/gi, " ")}
+          {propsData[currentIndex].question.replace(/[%20]/gi, " ")}
         </div>
-        <div className="answer">
-          <button className="btn-one" onClick={setQu}>
-            {propsData[ques].correct_answer.replace(/[%20]/gi, " ")}
-          </button>
-
-          <button className="btn-two" onClick={setQu}>
-            {propsData[ques].incorrect_answers[0].replace(/[%20]/gi, " ")}
-          </button>
-          <button className="btn-three" onClick={setQu}>
-            {propsData[ques].incorrect_answers[1].replace(/[%20]/gi, " ")}
-          </button>
-          <button className="btn-four" onClick={setQu}>
-            {propsData[ques].incorrect_answers[2].replace(/[%20]/gi, " ")}
-          </button>
+        <div style={{ marginTop: "40px", marginBottom: "50px" }}>
+          {shuffleAnswers.map((answer) => (
+            <Answer
+              key={answer}
+              correct_answer={correct_answer.replace(/[%20]/gi, " ")}
+              mamorize={mamorize}
+              clickedAnswer={clickedAnswer}
+              submitAnswer={handleAnswer}
+              answer={answer.replace(/[%20]/gi, " ")}
+            />
+          ))}
         </div>
+        <p className="corrct">CORRECT</p>
+        <button onClick={newQuestion} className="submit">
+          Next Question
+        </button>
+        {score}
         <ProgressBar />
       </div>
     </div>
